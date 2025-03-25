@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Myocardial Infarction Prediction</title>
+    <style>
+        body { background-color: #f4f4f9; text-align: center; font-family: Arial, sans-serif; }
+        .container { padding: 50px; background: white; width: 40%; margin: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { color: #4CAF50; }
+        input { padding: 10px; margin: 10px; border-radius: 5px; border: 1px solid #ddd; }
+        button { background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Patient Details</h2>
+        <form action="/predict" method="post">
+            {% for i in range(1, 5) %}
+                Feature {{ i }}: <input type="text" name="feature{{ i }}"><br><br>
+            {% endfor %}
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
